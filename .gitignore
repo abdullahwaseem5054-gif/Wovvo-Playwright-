@@ -1,0 +1,18 @@
+# Node modules
+node_modules/
+
+# Test results
+test-results/
+
+# Playwright reports
+playwright-report/
+
+# Environment files
+.env
+auth.json
+
+# Logs
+*.log
+
+# VS Code settings (optional)
+.vscode/
