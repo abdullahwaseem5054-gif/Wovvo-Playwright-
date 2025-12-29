@@ -1,0 +1,16 @@
+{
+  "login7": {
+    "validUser": {
+      "username": "muhammad.abdullah.qa+1@thehexatown.com",
+      "password": "Test1234"
+    },
+    "emptyUser": {
+      "username":  "",
+      "password": ""
+    },
+    "invalidUser": {
+      "username": "test@test.com",
+      "password": "wrongpass"
+    }
+  }
+}
