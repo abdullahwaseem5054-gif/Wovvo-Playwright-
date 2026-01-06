@@ -6,6 +6,9 @@ test('dashboard search', async({page})=>{
   const dashboard7 = new Dashboard(page);
 
   await dashboard7.open();
+  await dashboard7.dashboard1();
+  await dashboard7.taketour00();
+  await dashboard7.filters00();
   await dashboard7.favourite();
 
 });

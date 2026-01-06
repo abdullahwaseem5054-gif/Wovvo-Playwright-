@@ -29,7 +29,7 @@ class Dashboard{
 
     async dashboard1(ugc) {
     await this.search.click();
-    await this.search.fill(ugc);
+    await this.search.fill('ugc');
     }
 
     async taketour00(){

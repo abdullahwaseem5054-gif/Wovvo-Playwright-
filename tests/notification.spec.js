@@ -1,22 +1,11 @@
 import {test, expect} from '@playwright/test';
-const notifications = require('../pages/notification');
-
-let notify2
-
-test.beforeEach(async ({ page }) => {
-  notify2 = new notifications(page);
-  await notify2.open9();
-});
+const Notifications = require('../pages/notification');
 
 test.use({ storageState: 'auth.json' });
-test('Notification On', async({page})=>{
-    await notify2.notify();
-
-});
-
-
-test('Notification Off', async({page})=>{
-    notify2= new notifications(page);
-    await notify2.notify1();
-
+let notify2;
+test('Notification', async({page}) =>{
+    notify2= new Notifications(page);
+    await notify2.openPage();
+    await expect(page).toHaveURL('/notifications');
+    await notify2.notification();
 });

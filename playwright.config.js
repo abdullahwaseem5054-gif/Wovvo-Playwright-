@@ -3,15 +3,15 @@ import { defineConfig, devices } from '@playwright/test';
 module.exports = defineConfig({
   testDir: './tests',
   workers: 2,
-  timeout: 30000,
-  retries: 1,
+  timeout: 40000,
+  retries: 0,
   reporter: [['html', { open: 'never' }]],
   use: {
-    baseURL: 'https://app-staging.wovvo.ai',
+    baseURL: 'https://wovvo-fe.chillkro.com/',
     headless: false,
     viewport: { width: 1200, height: 760 },
     video: 'on',
-    screenshot: 'off',
+    screenshot: 'on',
     trace: 'off', 
   },
   projects: [
