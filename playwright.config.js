@@ -8,7 +8,7 @@ module.exports = defineConfig({
   reporter: [['html', { open: 'never' }]],
   use: {
     baseURL: 'https://wovvo-fe.chillkro.com/',
-    headless: false,
+    headless: true,
     viewport: { width: 1200, height: 760 },
     video: 'on',
     screenshot: 'on',
