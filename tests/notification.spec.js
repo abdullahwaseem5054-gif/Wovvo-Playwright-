@@ -8,4 +8,8 @@ test('Notification', async({page}) =>{
     await notify2.openPage();
     await expect(page).toHaveURL('/notifications');
     await notify2.notification();
+    const response = await page.waitForResponse(
+    res => res.url().includes('/notifications') && res.status() === 200
+    );
+    expect(response.status()).toBe(200);
 });

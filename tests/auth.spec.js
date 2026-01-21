@@ -5,7 +5,7 @@ test('auth', async ({ page }) => {
   const loginPage = new LoginPage(page);
   
   await loginPage.open();
-  await loginPage.login1('muhammad.abdullah.qa+9091@thehexatown.com', 'test1234');
+  await loginPage.login1('muhammad.abdullah.qa@thehexatown.com', 'test1234');
 
   await page.waitForFunction(() => {
     const item = localStorage.getItem('auth-storage');

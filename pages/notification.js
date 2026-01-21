@@ -1,9 +1,9 @@
 class Notifications {
   constructor(page) {
     this.page = page;
-    this.toggleLabel = page.locator('xpath=/html/body/div[2]/div[2]/main/div/div/div[2]/div[2]/div/div/div[2]/div[1]/div/label/div');
+    this.toggleLabel = page.locator('xpath=/html/body/div[2]/main/div/div/div[2]/div[2]/div/div/div[2]/div[1]/div/label/div');
     this.toggleInput = this.toggleLabel.locator('xpath=ancestor::label//input[@type="checkbox" and contains(@class,"peer")]');
-    this.dropdown = page.locator('xpath=/html/body/div[2]/div[2]/main/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div[1]/div/button');
+    this.dropdown = page.locator('xpath=/html/body/div[2]/main/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div[1]/div/button');
     this.applyBtn = page.locator('button[data-slot="button"]', { hasText: 'Apply Settings' });
   }
   async openPage() {
