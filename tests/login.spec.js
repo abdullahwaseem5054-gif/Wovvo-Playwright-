@@ -17,31 +17,56 @@ test.describe('Login Test', () => {
     await expect(page).toHaveURL('/job-feed');
   });
 
-  test('Invalid Login (Invalid Email Valid Password)', async () => {
-    await loginPage.login1(
-      'muhammad.abdullah+1@thehexatown.com',
-      'Test1234'
+  test('Invalid Login (Invalid Email Valid Password)', async ({page}) => {
+    await loginPage.login1('muhammad.abdullah+1@thehexatown.com','Test1234');
+    const response = await page.waitForResponse(
+    res => res.url().includes('') && res.status() === 400
     );
+    expect(response.status()).toBe(400);
   });
 
-  test('Invalid Login (Valid Email Invalid Password)', async () => {
-    await loginPage.login1(
-      'muhammad.abdullah.qa@thehexatown.com',
-      'hello'
+  test('Invalid Login (Valid Email Invalid Password)', async ({page}) => {
+    await loginPage.login1('muhammad.abdullah.qa@thehexatown.com','hello');
+    const response = await page.waitForResponse(
+    res => res.url().includes('') && res.status() === 400
     );
+    expect(response.status()).toBe(400);
   });
 
-  test('Invalid Login (Invalid Email Invalid Password)', async () => {
+  test('Invalid Login (Invalid Email Invalid Password)', async ({page}) => {
     const user1= testData.login7.invalidUser;
     await loginPage.login1(user1.username, user1.password);
+    const response = await page.waitForResponse(
+    res => res.url().includes('') && res.status() === 400
+    );
+    expect(response.status()).toBe(400);
   });
 
-  test('Empty Login', async () => {
+  test('Empty Login', async ({page}) => {
     await loginPage.login1('', '');
+
+    const emailValid = await page
+    .locator('#signin-email')
+    .evaluate(el => el.checkValidity());
+
+     const passwordValid = await page
+    .locator('#signin-password')
+    .evaluate(el => el.checkValidity());
+
+     expect(emailValid).toBe(false);
+     expect(passwordValid).toBe(false);
   });
 
-  test('Non-Registered User Login', async () => {
+  test('Non-Registered User Login', async ({page}) => {
     await loginPage.login1('test@test.com', 'test123');
+    const response = await page.waitForResponse(
+    res => res.url().includes('') && res.status() === 400
+    );
+    expect(response.status()).toBe(400);
   });
+
+  test('Ban User Login',async({page})=>{
+    await loginPage.login1('muhammad.abdullah.qa+11111@thehexatown.com','test1234');
+  })
 
 });

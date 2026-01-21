@@ -7,7 +7,7 @@ module.exports = defineConfig({
   retries: 0,
   reporter: [['html', { open: 'never' }]],
   use: {
-    baseURL: 'https://wovvo-fe.chillkro.com/',
+    baseURL: 'https://app-staging.wovvo.ai/',
     headless: true,
     viewport: { width: 1200, height: 760 },
     video: 'on',
@@ -26,6 +26,13 @@ module.exports = defineConfig({
       name: 'chromium',
       use: {
         browserName: 'chromium',
+      },
+    },
+
+    {
+      name: 'Pixel 5',
+      use: {
+        ...devices['Pixel 5'],
       },
     },
   ],
