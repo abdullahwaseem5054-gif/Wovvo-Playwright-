@@ -67,6 +67,10 @@ test.describe('Login Test', () => {
 
   test('Ban User Login',async({page})=>{
     await loginPage.login1('muhammad.abdullah.qa+11111@thehexatown.com','test1234');
+    const response = await page.waitForResponse(
+    res => res.url().includes('') && res.status() === 400
+    );
+    expect(response.status()).toBe(400);
   })
 
 });
