@@ -5,8 +5,7 @@ class EditProfile{
         this.editprofilebtn=page.locator('#edit-profile');
         this.firstname= page.locator('#firstName');
         this.lastname=page.locator('#lastName');
-        this.save=page.locator('xpath=/html/body/div[2]/main/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/button');
-        this.successToast = page.getByText('Profile updated successfully!');
+        this.save=page.getByText('Save Changes');
     
     }
 
