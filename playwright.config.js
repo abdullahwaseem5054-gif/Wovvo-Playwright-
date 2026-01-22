@@ -30,6 +30,13 @@ module.exports = defineConfig({
     },
 
     {
+      name: 'webkit',
+      use: {
+        browserName: 'webkit',
+      },
+    },
+
+    {
       name: 'Pixel 5',
       use: {
         ...devices['Pixel 5'],

@@ -10,7 +10,7 @@ class Payment{
     }
 
     async payment(){
-        await this.page.goto('https://checkout.stripe.com/c/pay/cs_test_a1GnHGQiaaJV6yunRqQwFfPQG54pXCJ4LQB8IWNyzouqRYX0xGY6MEOSmx#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSdkdWxOYHwnPyd1blpxYHZxWjA0VlRLTj1MR1ZOcGhnfWdoUW1xXFFScH9BaUZgPV1SdEhPVnBAXEI8bnFRNzR2UUxMf09iQ09Qcn9fZHR1MWJ3TWpRSUhMVDxvbFVhYkpyfG5QaE58fVViNTVnNFxQZHVsRicpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyZjY2NjY2MnKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSdga2RnaWBVaWRmYG1qaWFgd3YnP3F3cGB4JSUl')
+        await this.page.goto('https://checkout.stripe.com/c/pay/cs_test_a133DkX6rQr33ITsweHNEwv6pfVr1qwzSbv4vnDc5XRoAsbcqV4ZVBKex7#fidnandhYHdWcXxpYCc%2FJ2FgY2RwaXEnKSdkdWxOYHwnPyd1blpxYHZxWjA0VlRLTj1MR1ZOcGhnfWdoUW1xXFFScH9BaUZgPV1SdEhPVnBAXEI8bnFRNzR2UUxMf09iQ09Qcn9fZHR1MWJ3TWpRSUhMVDxvbFVhYkpyfG5QaE58fVViNTVnNFxQZHVsRicpJ2N3amhWYHdzYHcnP3F3cGApJ2dkZm5id2pwa2FGamlqdyc%2FJyZjY2NjY2MnKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSdga2RnaWBVaWRmYG1qaWFgd3YnP3F3cGB4JSUl')
     }
 
     async fill(cnumber, expiry, cvc, name){
